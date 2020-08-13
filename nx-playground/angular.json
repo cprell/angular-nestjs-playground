@@ -10,7 +10,7 @@
       },
       "root": "apps/todos",
       "sourceRoot": "apps/todos/src",
-      "prefix": "frontend",
+      "prefix": "nx-playground",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",

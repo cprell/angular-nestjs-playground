@@ -1,5 +1,5 @@
 {
-  "npmScope": "frontend",
+  "npmScope": "nx-playground",
   "affected": {
     "defaultBase": "master"
   },

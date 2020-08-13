@@ -1,4 +1,4 @@
-# Frontend
+# nx-playground
 
 This project was generated using [Nx](https://nx.dev).
 
@@ -26,7 +26,7 @@ Below are our core plugins:
   - `ng add @nrwl/angular`
 - [React](https://reactjs.org)
   - `ng add @nrwl/react`
-- Web (no framework frontends)
+- Web (no framework nx-playgrounds)
   - `ng add @nrwl/web`
 - [Nest](https://nestjs.com)
   - `ng add @nrwl/nest`
@@ -51,7 +51,7 @@ Run `ng g @nrwl/angular:lib my-lib` to generate a library.
 
 > You can also use any of the plugins above to generate libraries as well.
 
-Libraries are sharable across libraries and applications. They can be imported from `@frontend/mylib`.
+Libraries are sharable across libraries and applications. They can be imported from `@nx-playground/mylib`.
 
 ## Development server
 

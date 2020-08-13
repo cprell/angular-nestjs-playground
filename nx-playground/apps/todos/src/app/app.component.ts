@@ -6,7 +6,7 @@ interface Todo {
 }
 
 @Component({
-  selector: 'frontend-root',
+  selector: 'nx-playground-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
