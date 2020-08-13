@@ -1,2 +1,2 @@
-# flask-angular-playground
-flask-angular-playground
+# angular-nestjs-playground
+angular-nestjs-playground
