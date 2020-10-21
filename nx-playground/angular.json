@@ -59,7 +59,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "todos:build"
+            "browserTarget": "todos:build",
+            "proxyConfig": "apps/todos/proxy.conf.json"
           },
           "configurations": {
             "production": {
@@ -117,6 +118,61 @@
           "options": {
             "tsConfig": ["apps/todos-e2e/tsconfig.e2e.json"],
             "exclude": ["**/node_modules/**", "!apps/todos-e2e/**/*"]
+          }
+        }
+      }
+    },
+    "todos-api": {
+      "root": "apps/todos-api",
+      "sourceRoot": "apps/todos-api/src",
+      "projectType": "application",
+      "prefix": "todos-api",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/apps/todos-api",
+            "main": "apps/todos-api/src/main.ts",
+            "tsConfig": "apps/todos-api/tsconfig.app.json",
+            "assets": ["apps/todos-api/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/todos-api/src/environments/environment.ts",
+                  "with": "apps/todos-api/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "todos-api:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/todos-api/tsconfig.app.json",
+              "apps/todos-api/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/todos-api/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/todos-api/jest.config.js",
+            "tsConfig": "apps/todos-api/tsconfig.spec.json",
+            "passWithNoTests": true
           }
         }
       }
