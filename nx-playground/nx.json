@@ -1,5 +1,5 @@
 {
-  "npmScope": "frontend",
+  "npmScope": "nx-playground",
   "affected": {
     "defaultBase": "master"
   },
@@ -28,6 +28,9 @@
     "todos-e2e": {
       "tags": [],
       "implicitDependencies": ["todos"]
+    },
+    "todos-api": {
+      "tags": []
     }
   }
 }
